@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useAppContext } from "../../context/AppContextProvider";
 import { useState } from "react";
+import axiosInstance from "../../api";
+import ENDPOINTS from "../../api/ENDPOINTS";
 
 const initialFormValues = {
   email: "",
@@ -21,11 +23,21 @@ export default function SignIn() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const { email, password } = formData; // Destructure email and password from formData
 
+    axiosInstance
+      .post(ENDPOINTS.LOGGED_IN, formData)
+      .then((response) => {
+        // Handle successful response
+        console.log("Response:", response.data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error("Error:", error);
+      });
     // Check email and password
-    if (email === "admin" && password === "admin") {
+    if (formData.email === "admin" && formData.password === "admin") {
       setIsLoggedIn(true);
+      localStorage.setItem("santosh_login", true);
     }
   };
 

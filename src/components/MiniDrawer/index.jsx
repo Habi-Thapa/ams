@@ -176,7 +176,10 @@ export default function MiniDrawer() {
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
-                onClick={() => setIsLoggedIn(false)}
+                onClick={() => {
+                  setIsLoggedIn(false);
+                  localStorage.removeItem("santosh_login");
+                }}
               >
                 <ListItemIcon
                   sx={{

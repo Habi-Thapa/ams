@@ -1,5 +1,5 @@
 const ENDPOINTS = {
-  LOGGED_IN: "/loggedIn",
+  LOGGED_IN: "/login",
 };
 
 export default ENDPOINTS;
