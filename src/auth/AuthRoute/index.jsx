@@ -1,8 +1,6 @@
-import React from "react";
 import { useAppContext } from "../../context/AppContextProvider";
-import { Login } from "../../pages";
 import App from "../../App";
-
+import { Login } from "../../pages";
 const AuthRoute = () => {
   const {
     user: { isLoggedIn },

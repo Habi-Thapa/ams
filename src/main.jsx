@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import App from "./App.jsx";
-import { Attandance, Employee, Page404 } from "./pages";
+import { Attandance, Employee, Login, Page404 } from "./pages";
 import "./index.css";
 import AppContextProvider from "./context/AppContextProvider/index.jsx";
 import AuthRoute from "./auth/AuthRoute/index.jsx";
@@ -14,11 +18,11 @@ const router = createBrowserRouter([
     errorElement: <Page404 />,
     children: [
       {
-        path: "employee/",
+        path: "/employee",
         element: <Employee />,
       },
       {
-        path: "attandance/",
+        path: "/attandance",
         element: <Attandance />,
       },
     ],
