@@ -19,6 +19,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { Link, Outlet } from "react-router-dom";
 import DrawerItems from "./DrawerItem";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { useAppContext } from "../../context/AppContextProvider";
 
 const drawerWidth = 240;
 
@@ -91,6 +92,10 @@ export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
+  const {
+    user: { setIsLoggedIn },
+  } = useAppContext();
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -117,7 +122,7 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            <Link to="/">Attandance Management System</Link>
+            <Link to="/employee">Attandance Management System</Link>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -171,6 +176,7 @@ export default function MiniDrawer() {
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
+                onClick={() => setIsLoggedIn(false)}
               >
                 <ListItemIcon
                   sx={{

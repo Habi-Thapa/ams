@@ -5,11 +5,12 @@ import App from "./App.jsx";
 import { Attandance, Employee, Page404 } from "./pages";
 import "./index.css";
 import AppContextProvider from "./context/AppContextProvider/index.jsx";
+import AuthRoute from "./auth/AuthRoute/index.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <AuthRoute />,
     errorElement: <Page404 />,
     children: [
       {
