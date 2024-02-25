@@ -4,7 +4,7 @@ import fetchEmployees from "../services/fetchEmployee";
 import { DataGrid } from "@mui/x-data-grid";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 150 },
+  { field: "id", headerName: "ID", width: 10 },
   { field: "first_name", headerName: "First Name", width: 150 },
   { field: "middle_name", headerName: "Middle Name", width: 150 },
   { field: "last_name", headerName: "Last Name", width: 150 },
@@ -30,7 +30,7 @@ const ViewEmployee = () => {
   return (
     <Box
       sx={{
-        marginTop: 8,
+        marginTop: 2,
         display: "flex",
         flexDirection: "column",
         height: minHeight,

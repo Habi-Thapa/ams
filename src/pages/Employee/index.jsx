@@ -1,5 +1,6 @@
 import { Box, Container, CssBaseline, Typography } from "@mui/material";
 import ViewEmployee from "./ViewEmployee";
+import AddEmployee from "./AddEmployee";
 
 const Employee = () => {
   return (
@@ -12,6 +13,7 @@ const Employee = () => {
           // alignItems: "center",
         }}
       >
+        <AddEmployee />
         <Typography variant="h4" component="h2">
           Employees List
         </Typography>
